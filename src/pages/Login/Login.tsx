@@ -1,18 +1,20 @@
 import React, { ChangeEvent, useState, useEffect } from 'react'
 import { Box, Button, Grid, TextField, Typography } from '@material-ui/core'
 import { Link, useHistory } from 'react-router-dom';
-import useLocalStorage from 'react-use-localstorage';
-
 import { login } from '../../services/Service';
 import UserLogin from '../../models/UserLogin';
-
 import './Login.css';
+import { useDispatch } from 'react-redux';
+import { addToken } from '../../store/tokens/action';
+
 
 function Login() {
 
     let history = useHistory()
+    
+    const dispatch = useDispatch();
 
-    const [token, setToken] = useLocalStorage('token')
+    const [token, setToken] = useState('')
 
     const [userLogin, setUserLogin] = useState<UserLogin>({
         id: 0,
@@ -25,6 +27,7 @@ function Login() {
 
     useEffect(() => {
         if(token !== ""){
+            dispatch(addToken(token));
             history.push('/home')
         }
     }, [token])
@@ -49,10 +52,10 @@ function Login() {
     }
 
     return (
-        <Grid container direction='row' justifyContent='center' alignItems='center'>
+        <Grid container direction='row' justifyContent='center' alignItems='center' className='background' >
             <Grid alignItems='center' xs={6}>
-                <Box paddingX={20}>
-
+                <Box paddingX={20} >
+                        
                     <form onSubmit={ onSubmit }>
                         <Typography variant='h3' gutterBottom color='textPrimary' component='h3' align='center' className='textos1'>Entrar</Typography>
 
@@ -75,9 +78,9 @@ function Login() {
                         <Link to='/cadastro'>
                             <Typography variant='subtitle1' gutterBottom align='center' className='textos1'>Cadastre-se</Typography>
                         </Link>
-                    </Box>
-
+                    </Box>      
                 </Box>
+                
             </Grid>
             <Grid xs={6} className='imagem'>
 

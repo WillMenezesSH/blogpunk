@@ -2,6 +2,16 @@
     background-color: #3F51B5;
 }
 
+.caixa2 { 
+    background: url(https://i.imgur.com/ztj5jtc.gif)!important;
+    background-repeat: no-repeat !important;
+    width: 100vh !important;
+    min-height: 100vh !important;
+    background-size: cover !important;
+    background-position: center !important;
+    }
+
+
 .titulo{
    color: white !important;
    font-weight: bold !important;
@@ -9,8 +19,9 @@
 
 .botao{
     border-color: white !important;
-    background-color: #3F51B5;
+    background-color: #7e138f !important;
     color: white !important;
+    text-decoration:  none !important;
 }
 
 .postagens{
