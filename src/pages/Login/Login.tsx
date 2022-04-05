@@ -56,27 +56,25 @@ function Login() {
             <Grid alignItems='center' xs={6}>
                 <Box paddingX={20} >
                         
-                    <form onSubmit={ onSubmit }>
-                        <Typography variant='h3' gutterBottom color='textPrimary' component='h3' align='center' className='textos1'>Entrar</Typography>
+                    <form onSubmit={ onSubmit } className='textos1'>
+                        <Typography variant='h3' gutterBottom color='textPrimary' component='h3' align='center' className='textos1'>ENTRAR</Typography>
 
-                        <TextField value={ userLogin.usuario } onChange={ (e: ChangeEvent<HTMLInputElement>) => updatedModel(e)} id='usuario' label='usuário' variant='outlined' name='usuario' margin='normal' fullWidth />
-                        <TextField value={ userLogin.senha } onChange={ (e: ChangeEvent<HTMLInputElement>) => updatedModel(e)} id='senha' label='senha' variant='outlined' name='senha' margin='normal' type='password' fullWidth />
+                        <TextField value={userLogin.usuario} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)} id='usuario' label='USUÁRIO'name='usuario' variant='filled' margin='normal' fullWidth required />
+                            <TextField value={userLogin.senha} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)} id='senha' label='SENHA' name='senha' variant='filled' margin='normal' type='password' fullWidth required />
 
                         <Box marginTop={2} textAlign='center'>
 
-                            <Button type='submit' variant='contained' color='primary'>
+                            <Button type='submit' className='btn btn--secondary btn-content textos1'>
                                 Logar
                             </Button>
 
                         </Box>
                     </form>
 
-                    <Box display='flex' justifyContent='center' marginTop={2}>
-                        <Box marginRight={1}>
-                            <Typography variant='subtitle1' gutterBottom align='center'>Não tem uma conta?</Typography>
-                        </Box>
+                        
+                    <Box display='flex' justifyContent='center' marginTop={2} className='btn2 btn--secondary2 btn-content2'>
                         <Link to='/cadastro'>
-                            <Typography variant='subtitle1' gutterBottom align='center' className='textos1'>Cadastre-se</Typography>
+                       <Button type='submit' className= 'btn2 btn--secondary2 btn-content textos1'> Não tem uma conta? Cadastre-se!</Button>
                         </Link>
                     </Box>      
                 </Box>

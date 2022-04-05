@@ -30,47 +30,47 @@ function NavBar() {
             navbarComponent = <AppBar position="static">
                 <Toolbar variant="dense" className='back'>
                     <Box className='cursor'>
-                        <Typography variant="h5" color="inherit">
-                            BlogPessoal
+                        <Typography variant="h5" color="inherit" className='textos'>
+                            SHINOLOG   |
                         </Typography>
                     </Box>
 
                     <Box display="flex" justifyContent="start">
                         <Link to="/home" className="text-decorator-none">
                             <Box mx={1} className='cursor'>
-                                <Typography variant="h6" color="inherit">
-                                    Home
+                                <Typography variant="h6" color="inherit" className='textos' >
+                                    HOME |
                                 </Typography>
                             </Box>
                         </Link>
 
                         <Link to="/posts" className="text-decorator-none">
                             <Box mx={1} className='cursor'>
-                                <Typography variant="h6" color="inherit">
-                                    Postagens
+                                <Typography className='textos' variant="h6" color="inherit">
+                                    POSTAGENS |
                                 </Typography>
                             </Box>
                         </Link>
 
                         <Link to="/temas" className="text-decorator-none">
                             <Box mx={1} className='cursor'>
-                                <Typography variant="h6" color="inherit">
-                                    Temas
+                                <Typography variant="h6" color="inherit" className='textos'>
+                                    TEMAS |
                                 </Typography>
                             </Box>
                         </Link>
 
-                        <Link to="/formularioTema" className="text-decorator-none">
+                        <Link to="/formularioTema" className="text-decorator-none" >
                             <Box mx={1} className='cursor'>
-                                <Typography variant="h6" color="inherit">
-                                    Cadastrar Temas
+                                <Typography variant="h6" color="inherit" className='textos'>
+                                    CADASTRAR TEMAS |
                                 </Typography>
                             </Box>
                         </Link>
 
                         <Box mx={1} className='cursor' onClick={ goLogout }>
-                            <Typography variant="h6" color="inherit">
-                                Logout
+                            <Typography variant="h6" color="inherit" className='textos'>
+                                LOGOUT
                             </Typography>
                         </Box>
                     </Box>

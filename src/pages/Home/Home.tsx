@@ -38,7 +38,7 @@ function Home() {
               <ModalPostagem />
             </Box>
             <Link to="/posts">
-            <Button variant="outlined" className='botao'>Ver Postagens</Button>
+            <Button  className='btn btn--secondary btn-content text-decoration titulo'>Ver Postagens</Button>
             </Link>
           </Box>
 

@@ -50,7 +50,7 @@ function CadastroTema() {
         setTema({
             ...tema,
             [e.target.name]: e.target.value,
-            postagem: [{}]  // Configura para que o campo de Postagem do tema escolhido fique vazio
+            postagem: [{}] 
         })
     }
 
