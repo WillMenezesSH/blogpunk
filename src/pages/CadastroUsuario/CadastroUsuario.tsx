@@ -6,6 +6,7 @@ import User from '../../models/User';
 import { cadastroUsuario } from '../../services/Service';
 
 import './CadastroUsuario.css';
+import { toast } from 'react-toastify';
 
 function CadastroUsuario() {
 
@@ -55,15 +56,45 @@ function CadastroUsuario() {
 
             try {
                 await cadastroUsuario(`/usuarios/cadastrar`, user, setUserResult)
-                alert("Usuário cadastrado com sucesso")
+                toast.success('Usuário cadastrado com sucesso!', {
+                    position: "top-right",
+                    autoClose:2000,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: false,
+                    draggable: false,
+                    theme: "colored",
+                    progress: undefined,
+          
+                })
 
             } catch (error) {
                 console.log(`Error: ${error}`)
-                alert("Usuário já existente")
+                toast.error('Usuário já existente!', {
+                    position: "top-right",
+                    autoClose:2000,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: false,
+                    draggable: false,
+                    theme: "colored",
+                    progress: undefined,
+          
+                })
             }
 
         } else {
-            alert('Dados inconsistentes. Favor verificar as informações de cadastro.')
+            toast.error('Dados inconsistentes. Por favor, tente novamente!', {
+                position: "top-right",
+                autoClose:2000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: false,
+                draggable: false,
+                theme: "colored",
+                progress: undefined,
+      
+            })
         }
     }
 
